@@ -45,9 +45,10 @@ const TodoList = () => {
     <View style={styles.todoItem}>
       <View style={styles.row}>
         <CheckBox
-          boxType="square"
+          boxType="circle"
           style={styles.checkbox}
           value={item.completed}
+          tintColors={{true: Colors.primary, false: 'black'}}
           onValueChange={() => handleToggleTodo(item.id)}
         />
         <TouchableOpacity onPress={() => handleToggleTodo(item.id)}>
@@ -97,6 +98,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 8,
     paddingHorizontal: 10,
+    backgroundColor: Colors.list,
+    paddingVertical: 10,
+    borderRadius: 20,
+    marginHorizontal: 10,
   },
   row: {
     flexDirection: 'row',
